@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaming Modifications Website</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse-bg {
+            0%, 100% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .animate-pulse-bg {
+            animation: pulse-bg 4s ease-in-out infinite;
+        }
+
+        .animation-delay-2s {
+            animation-delay: 2s;
+        }
+
+        .animation-delay-4s {
+            animation-delay: 4s;
+        }
+
+        /* Bubble text effect */
+        .bubble-letter {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+
+        .bubble-letter:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hide/Show dropdown content */
+        .dropdown-content {
+            display: none;
+        }
+
+        .dropdown-content.active {
+            display: block;
+        }
+
+        /* Rotate chevron */
+        .chevron {
+            transition: transform 0.3s ease;
+        }
+
+        .chevron.rotated {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute -top-40 -right-40 w-80 h-80 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse-bg"></div>
+        <div class="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse-bg animation-delay-2s"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl animate-pulse-bg animation-delay-4s"></div>
+    </div>
+
+    <div class="relative z-10">
+        <!-- Header Section - EASY TO EDIT -->
+        <header class="text-center py-16 px-4">
+            <h1 class="text-6xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mb-4">
+                <!-- Edit the title letters here -->
+                <span class="bubble-letter">G</span>
+                <span class="bubble-letter">A</span>
+                <span class="bubble-letter">M</span>
+                <span class="bubble-letter">E</span>
+                <span class="mx-4"></span>
+                <span class="bubble-letter">M</span>
+                <span class="bubble-letter">O</span>
+                <span class="bubble-letter">D</span>
+                <span class="bubble-letter">S</span>
+            </h1>
+            <!-- Edit the subtitle here -->
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">
+                Enhance your gaming experience with legitimate modifications and training tools
+            </p>
+        </header>
+
+        <!-- Main Content -->
+        <div class="max-w-6xl mx-auto px-4 pb-16">
+            <div class="grid md:grid-cols-2 gap-8">
+                
+                <!-- CS:GO Section - EASY TO EDIT -->
+                <div class="bg-black/30 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <!-- CS:GO Icon (using Unicode target symbol) -->
+                        <div class="w-12 h-12 text-orange-400 mr-4 text-4xl">🎯</div>
+                        <!-- Edit CS:GO title here -->
+                        <h2 class="text-4xl font-bold text-white">CS:GO</h2>
+                    </div>
+                    
+                    <!-- Edit CS:GO description here -->
+                    <p class="text-gray-300 mb-6">
+                        Training scripts and practice tools to improve your gameplay
+                    </p>
+
+                    <!-- CS:GO Dropdown Button -->
+                    <button onclick="toggleDropdown('csgo')" class="w-full bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-between group">
+                        <span class="flex items-center">
+                            <span class="text-2xl mr-3">🎮</span>
+                            View Scripts
+                        </span>
+                        <span class="chevron text-2xl" id="csgo-chevron">⌄</span>
+                    </button>
+
+                    <!-- CS:GO Scripts List - EASY TO EDIT -->
+                    <div id="csgo-dropdown" class="dropdown-content mt-6 space-y-3">
+                        <!-- Script 1 -->
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=213240871" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-orange-300 transition-colors">Aim Training Helper</h3>
+                                    <p class="text-gray-400 text-sm">Practice crosshair placement</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-orange-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Script 2 -->
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=419404847" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-orange-300 transition-colors">Smoke Practice Tool</h3>
+                                    <p class="text-gray-400 text-sm">Learn smoke lineups</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-orange-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Script 3 -->
+                        <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=419404847" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-orange-300 transition-colors">Recoil Master</h3>
+                                    <p class="text-gray-400 text-sm">Master spray patterns</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-orange-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Script 4 -->
+                        <a href="https://settings.gg/" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-orange-300 transition-colors">Config Generator</h3>
+                                    <p class="text-gray-400 text-sm">Optimize your settings</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-orange-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- GTA Section - EASY TO EDIT -->
+                <div class="bg-black/30 backdrop-blur-lg rounded-3xl p-8 border border-white/10 hover:border-white/20 transition-all duration-300">
+                    <div class="flex items-center mb-6">
+                        <!-- GTA Icon (using Unicode car symbol) -->
+                        <div class="w-12 h-12 text-green-400 mr-4 text-4xl">🚗</div>
+                        <!-- Edit GTA title here -->
+                        <h2 class="text-4xl font-bold text-white">GTA V</h2>
+                    </div>
+                    
+                    <!-- Edit GTA description here -->
+                    <p class="text-gray-300 mb-6">
+                        Single-player modifications and visual enhancements
+                    </p>
+
+                    <!-- GTA Dropdown Button -->
+                    <button onclick="toggleDropdown('gta')" class="w-full bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-600 hover:to-emerald-600 text-white font-bold py-4 px-6 rounded-2xl transition-all duration-300 transform hover:scale-105 flex items-center justify-between group">
+                        <span class="flex items-center">
+                            <span class="text-2xl mr-3">⚡</span>
+                            View Mods
+                        </span>
+                        <span class="chevron text-2xl" id="gta-chevron">⌄</span>
+                    </button>
+
+                    <!-- GTA Mods List - EASY TO EDIT -->
+                    <div id="gta-dropdown" class="dropdown-content mt-6 space-y-3">
+                        <!-- Mod 1 -->
+                        <a href="https://www.gta5-mods.com/misc/naturalvision-evolved" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-green-300 transition-colors">Visual Enhancement</h3>
+                                    <p class="text-gray-400 text-sm">Improved graphics and lighting</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-green-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Mod 2 -->
+                        <a href="https://www.gta5-mods.com/vehicles" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-green-300 transition-colors">Vehicle Pack</h3>
+                                    <p class="text-gray-400 text-sm">New cars and motorcycles</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-green-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Mod 3 -->
+                        <a href="https://www.gta5-mods.com/maps" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-green-300 transition-colors">Map Expansion</h3>
+                                    <p class="text-gray-400 text-sm">New areas to explore</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-green-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                        
+                        <!-- Mod 4 -->
+                        <a href="https://www.gta5-mods.com/scripts" target="_blank" class="block bg-white/10 hover:bg-white/20 rounded-xl p-4 transition-all duration-300 transform hover:scale-105 group">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-white font-semibold group-hover:text-green-300 transition-colors">Gameplay Overhaul</h3>
+                                    <p class="text-gray-400 text-sm">Enhanced mechanics</p>
+                                </div>
+                                <span class="text-gray-400 group-hover:text-green-300 transition-colors">↗</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Section - EASY TO EDIT -->
+            <div class="text-center mt-16">
+                <div class="bg-black/20 backdrop-blur-lg rounded-2xl p-6 border border-white/10">
+                    <!-- Edit disclaimer text here -->
+                    <p class="text-gray-300 mb-4">
+                        <strong class="text-white">Disclaimer:</strong> All modifications and scripts listed here are for legitimate use only. 
+                        Always respect game terms of service and play fair.
+                    </p>
+                    <!-- Edit tags here -->
+                    <div class="flex justify-center space-x-4 flex-wrap gap-2">
+                        <span class="px-4 py-2 bg-blue-500/20 text-blue-300 rounded-full text-sm">Training Tools</span>
+                        <span class="px-4 py-2 bg-green-500/20 text-green-300 rounded-full text-sm">Visual Mods</span>
+                        <span class="px-4 py-2 bg-purple-500/20 text-purple-300 rounded-full text-sm">Community Content</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Dropdown Functionality -->
+    <script>
+        // Easy to edit dropdown functionality
+        function toggleDropdown(section) {
+            const dropdown = document.getElementById(section + '-dropdown');
+            const chevron = document.getElementById(section + '-chevron');
+            
+            // Toggle the dropdown visibility
+            if (dropdown.classList.contains('active')) {
+                dropdown.classList.remove('active');
+                dropdown.classList.remove('animate-fadeIn');
+                chevron.classList.remove('rotated');
+            } else {
+                // Close other dropdowns first
+                closeAllDropdowns();
+                
+                dropdown.classList.add('active');
+                dropdown.classList.add('animate-fadeIn');
+                chevron.classList.add('rotated');
+            }
+        }
+        
+        function closeAllDropdowns() {
+            const dropdowns = document.querySelectorAll('.dropdown-content');
+            const chevrons = document.querySelectorAll('.chevron');
+            
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+                dropdown.classList.remove('animate-fadeIn');
+            });
+            
+            chevrons.forEach(chevron => {
+                chevron.classList.remove('rotated');
+            });
+        }
+        
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(event) {
+            const isButton = event.target.closest('button');
+            if (!isButton) {
+                closeAllDropdowns();
+            }
+        });
+    </script>
+</body>
+</html>
